@@ -3,87 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnoxieBot - Your Personal Assistant</title>
-    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <title></title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
+            background-color: #f0f0f0;
         }
-        header {
-            background-color: #503D36;
-            color: #fff;
-            padding: 10px 0;
+        .top-bar {
             width: 100%;
-            box-shadow: 0 4px 2px -2px gray;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        header h1 {
+        .top-bar img {
+            margin-left: 20px;
+            height: 40px;
+        }
+        .top-bar h1 {
             margin: 0;
             font-size: 24px;
         }
-        main {
-            flex: 1;
-            padding: 20px;
-            max-width: 800px;
+        .container {
+            flex-grow: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1000px;
         }
-        footer {
-            background-color: #503D36;
-            color: #fff;
+        iframe {
+            border: none;
+            flex-grow: 2;
+            max-width: 100%;
+            height: calc(100vh - 100px); /* 140px accounts for the top bar and footer */
+            max-height: 100%;
+        }
+        .footer {
+            width: 1465px;
+            background-color: #333;
+            color: white;
             padding: 10px 0;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
             text-align: center;
-        }
-        df-messenger {
-            z-index: 999;
-            position: fixed;
-            --df-messenger-font-color: #000;
-            --df-messenger-font-family: 'Google Sans', sans-serif;
-            --df-messenger-chat-background: #597c77;
-            --df-messenger-message-user-background: #d3e3fd;
-            --df-messenger-message-bot-background: #fff;
-            bottom: 0;
-            right: 400px;
-            top: 130px;
-            width: 700px;
-            height: 500px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to InnoxieBot</h1>
-    </header>
-    <main>
-        <p>Hi! I am InnoxieBot, your personal assistant. I am here to help you with your queries and provide you with the information you need. Just type your question below and I'll get back to you as soon as possible!</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 InnoxieBot. All rights reserved.</p>
-    </footer>
-    <df-messenger
-      project-id="scholars-bot"
-      agent-id="09a39f73-af63-4467-bc06-f5dbbdffa257"
-      language-code="en"
-      max-query-length="-1">
-      <df-messenger-chat
-       chat-title="Scholars Handbook">
-      </df-messenger-chat>
-    </df-messenger>
-    <script>
-      window.addEventListener('dfMessengerLoaded', function(event) {
-        const dfMessenger = document.querySelector('df-messenger');
-        dfMessenger.renderCustomText('Welcome to InnoxieBot! How can I assist you today?');
-      });
-    </script>
+    <div class="top-bar">
+        <img src="https://media.istockphoto.com/id/1413286466/vector/chat-bot-icon-robot-virtual-assistant-bot-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZSG3eqGPDJgIgFUIuVxID64uVUF3eqM3LrrDWtaKses=" alt="Logo">
+        <h1>SCHOLARS HANDBOOK</h1>
+    </div>
+    <div class="container">
+        <iframe
+            allow="microphone;"
+            src="https://console.dialogflow.com/api-client/demo/embedded/f7b02456-efcf-4b2a-93ce-d7cb44ea3d63">
+        </iframe>
+    </div>
+    <div class="footer">
+        &copy; 2024 Iranzi Innocent. All rights reserved.
+    </div>
 </body>
 </html>
